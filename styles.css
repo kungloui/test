@@ -58,6 +58,11 @@
 
 .slides {
   padding: 0 40px;
+  position: relative;
+}
+
+.slick-dots {
+  width: calc(100% - 80px) !important;
 }
 
 .slide-container {
