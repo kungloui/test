@@ -42,6 +42,22 @@
     <h1>Hemsida</h1>
   </header>
 
+  <form id="personNumber">
+      <label id="unvalid" class="not-displaying">Vänligen skriv in ditt personnummer</label>
+    <div>
+      Personnummer:<input id="personNumberField" type="text" name="personNumb" placeholder="skriv in personnummer">
+      <input type="submit" value="submit"></input>
+    </div>
+  </form>
+
+  <form id="emailForm">
+    <label id="unvalidEpost" class="not-displaying">Vänligen skriv in din epostadress</label>
+    <div>
+      Epostadress:<input id="emailField" type="text" value="" placeholder="skriv in epostadress">
+      <input type="submit" value="submit"></input>
+    </div>
+  </form>
+
   <main>
     <div class="slides">
       <div class="slide-container"><div class="slide">your content 1</div></div>
@@ -70,7 +86,7 @@
         <div class="col-md-2">
           <ul class="link-list">
             <li><a href="">Our Team</a></li>
-            <li><a href="">Terms & Conditions</a></li>
+            <li><a href="">Terms and Conditions</a></li>
             <li><a href="">Privacy Policy</a></li>
             <li><a href="">Project Protection</a></li>
             <li><a href="">Press Kit</a></li>
@@ -99,6 +115,8 @@
     </div>
   </footer>
   <script type="text/javascript" src="./carousel.js"></script>
+  <script type="text/javascript" src="./personNumber.js"></script>
+  <script type="text/javascript" src="./emailForm.js"></script>
   <script type="text/javascript" src="./footer.js"></script>
   <script type="text/javascript" src="./navbar.js"></script>
 </body>

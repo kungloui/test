@@ -35,6 +35,24 @@
   width: 20%;
   min-height: 100px;
 }
+form {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  padding: 1.5em 0em;
+}
+#info-msg {
+
+}
+.not-displaying {
+  display: none;
+}
+.show-unvalid {
+  display: block;
+  color: red;
+}
 
 .red {
   background-color: red;
@@ -57,6 +75,7 @@
 }
 
 .slides {
+  margin-top: 2em;
   padding: 0 40px;
   position: relative;
 }
