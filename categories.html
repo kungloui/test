@@ -50,13 +50,54 @@
     </div>
   </form>
 
-  <form id="emailForm">
-    <label id="unvalidEpost" class="not-displaying">Vänligen skriv in din epostadress</label>
+  <div class="container member">
+  <div class="join" id="join-us">
+    <h2>Bli medlem!</h2>
+    <p class="intro-text">Praesent varius magna eget hendrerit fringilla. Proin sit amet nisl tellus. Proin convallis risus neque, sit amet sagittis erat mollis quis. Integer a mi mollis, scelerisque risus eu, imperdiet justo. Nullam eget rutrum libero, a tincidunt ipsum. Fusce eu dolor gravida, elementum felis mollis, aliquam est. Integer nisi purus, rhoncus ut efficitur sodales, luctus non magna.</p>
+    <form name="memberForm" id="Formsubmit" class="membership" action="/index.php/Open/register_user" method="post">
+      <div class="split-input">
+        <div>
+          <label>Förnamn</label>
+          <input id="firstname" class="name" type="text" name="firstName" placeholder="Skriv förnamn">
+        </div>
+        <div>
+          <label>Efternamn</label>
+          <input id="lastname" class="name" type="text" name="lastName" placeholder="Skriv efternamn">
+        </div>
+      </div>
+
     <div>
-      Epostadress:<input id="emailField" type="text" value="" placeholder="skriv in epostadress">
-      <input type="submit" value="submit"></input>
+      <label>Epostadress:</label>
+        <input id="emailField" class="full-width" type="text" value="" name="email1" placeholder="skriv in epostadress">
     </div>
-  </form>
+      <label>Bekräfta e-postadress</label>
+      <input class="full-width" type="text" name="email2" placeholder="Skriv e-postadress" >
+      <div class="share-line">
+        <div>
+          <label>Stad</label>
+          <input id="city" type="text" name="city" placeholder="Skriv stad" >
+        </div>
+        <div class="gender">
+          <button class="chose" type="button">
+            <span class="toggle-gender">
+              <p class="icon-unfilled">Man</p></i>
+            </span>
+          </button>
+          <button class="chose" type="button">
+            <span class="toggle-gender">
+              <p class="icon-unfilled">Kvinna</p></i>
+            </span>
+          </button>
+        </div>
+      </div>
+      <div id="unvalidInput" class="not-displaying"></div>
+      <button type="submit" class="next" value="submit">GÅ VIDARE</button>
+      <button class="button-back"><a href="/medlemskap/" class="back">Tillbaka</a></button>
+    </form>
+
+  </div>
+</div>
+
 
   <main>
     <div class="slides">
