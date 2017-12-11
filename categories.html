@@ -78,12 +78,12 @@
           <input id="city" type="text" name="city" placeholder="Skriv stad" >
         </div>
         <div class="gender">
-          <button class="chose" type="button">
+          <button id="man" class="chose" type="button" value="man" onclick="setGender(this.value)">
             <span class="toggle-gender">
               <p class="icon-unfilled">Man</p></i>
             </span>
           </button>
-          <button class="chose" type="button">
+          <button id="woman" class="chose" type="button" value="kvinna" onclick="setGender(this.value)">
             <span class="toggle-gender">
               <p class="icon-unfilled">Kvinna</p></i>
             </span>
@@ -91,7 +91,7 @@
         </div>
       </div>
       <div id="unvalidInput" class="not-displaying"></div>
-      <button type="submit" class="next" value="submit">GÅ VIDARE</button>
+      <button id="submit-form" type="submit" class="next" value="submit">GÅ VIDARE</button>
       <button class="button-back"><a href="/medlemskap/" class="back">Tillbaka</a></button>
     </form>
 

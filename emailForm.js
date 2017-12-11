@@ -1,70 +1,95 @@
+var gender;
+
+var setGender = function(value) {
+  gender = value;
+  console.log("gender:", gender);
+}
+
 $(document).ready(function () {
-    $('#Formsubmit').on('submit', function(e) {
-        e.preventDefault();
-        var unvalidElement = document.getElementById('unvalidInput');
-        // var successElement = document.getElementById('successElement');
-        var form = document.forms["memberForm"]
+  $("#submit-form").click(function(e) {
+    e.preventDefault();
 
-        var firstName = form.firstName.value;
-        var lastName = form.lastName.value;
-        var city = form.city.value;
-        var mail = form.email1.value;
-        var mailConfirm = form.email2.value;
+    error = 0;
+    var firstName = $("#firstname").val();
+    var lastName = $("#lastname").val();
+    var city = $("#city").val();
+    var mail = $("#emailField").val();
+    var mailConfirm = $("#email2").val();
+    var password = $("#password").val();
+    var passwordConfirm = $("#passwordConfirm").val();
+    console.log('Det här är gender: ', gender)
 
-        var isValidEmail = validateEmail(mail);
-        var allFieldsAreFilled = (firstName && lastName && city)
-        var emailIsConfirmed = (mail === mailConfirm)
 
-        console.log('isValidEmail', isValidEmail)
-        console.log('allFieldsAreFilled', allFieldsAreFilled)
-        console.log('emailIsConfirmed', emailIsConfirmed)
+    var unvalidElement = document.getElementById('unvalidInput');
 
-        if (!allFieldsAreFilled) {
-            console.log('All fields are not filled!')
-            unvalidElement.innerHTML = "Vänligen fyll i alla fälten";
-            unvalidElement.classList.add('show-unvalid');
+    if (firstName == "" || lastName == "") {
+      console.log('Name is not filled!')
+      unvalidElement.innerHTML = "Vänligen fyll i både förnamn och efternamn";
+      unvalidElement.classList.add('show-unvalid');
+      error = 1;
+    }
+    if (city == "") {
+      console.log('All fields are not filled!')
+      unvalidElement.innerHTML = "Vänligen fyll i stad";
+      unvalidElement.classList.add('show-unvalid');
+      error = 2;
+    }
+    if (gender == "") {
+      console.log(gender);
+      console.log('Gender is empty!')
+      unvalidElement.innerHTML = "Vänligen välj man eller kvinna";
+      unvalidElement.classList.add('show-unvalid');
+      error = 3;
+    }
 
-        } else if (!isValidEmail) {
-            console.log('Email is not valid!')
-            unvalidElement.innerHTML = "Vänligen fyll i en giltig epostadress";
-            unvalidElement.classList.add('show-unvalid');
+    var validate = validateEmail(mail);
+    if (validate == "false") {
+      console.log('Email is not valid!')
+      unvalidElement.innerHTML = "Vänligen fyll i en giltig epostadress";
+      unvalidElement.classList.add('show-unvalid');
+      error = 4;
+    }
+    if (mailConfirm != mail) {
+      console.log('mailConfirm is not valid!')
+      unvalidElement.innerHTML = "Vänligen fyll i samma epostadress i båda fälten";
+      unvalidElement.classList.add('show-unvalid');
+      error = 5;
+    }
+    if (password && password.length < 8) {
+      console.log('password is not valid!')
+      unvalidElement.innerHTML = "Lösenordet är för kort";
+      unvalidElement.classList.add('show-unvalid');
+      error = 6;
+    }
+    if (password == "") {
+      console.log('mailConfirm is not valid!')
+      unvalidElement.innerHTML = "Vänligen fyll i ett lösenord";
+      unvalidElement.classList.add('show-unvalid');
+      error = 7;
+    }
+    if (password != passwordConfirm) {
+      console.log('mailConfirm is not valid!')
+      unvalidElement.innerHTML = "Vänligen fyll i samma lösenord i båda fälten";
+      unvalidElement.classList.add('show-unvalid');
+      error = 8;
+    }
+    if ( error == 0){
+    $("#Formsubmit").submit();
 
-        } else if (!emailIsConfirmed) {
-            console.log('Email is not confirmed!')
-            unvalidElement.innerHTML = "Vänligen skriv in samma epostadress i båda fälten";
-            unvalidElement.classList.add('show-unvalid');
+  } else {
+    console.log(error);
+  }
 
-        } else {
-            console.log('Success!!!! :)')
-            // $("#Formsubmit").submit();
-
-            // var url = "testurl.com/test"
-            // var data = {
-            //   firstName: firstName,
-            //   lastName: lastName,
-            //   city: city,
-            //   mail: mail,
-            // }
-
-            // $.ajax({
-            //   method: "POST",
-            //   url: url,
-            //   data: data
-            // }).done(function(msg) {
-            //   successElement.innerHTML = "Ditt konto är skapat!";
-            //   successElement.classList.add('show-success');
-            // });    
-        }
-    });
-});
+  });
 
 function validateEmail(input) {
     var reEmail = /^(?:[\w\!\#\$\%\&\'\*\+\-\/\=\?\^\`\{\|\}\~]+\.)*[\w\!\#\$\%\&\'\*\+\-\/\=\?\^\`\{\|\}\~]+@(?:(?:(?:[a-zA-Z0-9](?:[a-zA-Z0-9\-](?!\.)){0,61}[a-zA-Z0-9]?\.)+[a-zA-Z0-9](?:[a-zA-Z0-9\-](?!$)){0,61}[a-zA-Z0-9]?)|(?:\[(?:(?:[01]?\d{1,2}|2[0-4]\d|25[0-5])\.){3}(?:[01]?\d{1,2}|2[0-4]\d|25[0-5])\]))$/;
 
     if(!input.match(reEmail)) {
-      return false;
+      return "false";
     }
 
-    return true;
+    return "true";
 
 }
+});
