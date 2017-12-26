@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Example</title>
+  <link rel="stylesheet" href="./bootstrap_header.css">
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+  <script type="text/javascript" src="./node_modules/slick-carousel/slick/slick.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="./node_modules/slick-carousel/slick/slick.css"/>
+  <link rel="stylesheet" type="text/css" href="./node_modules/slick-carousel/slick/slick-theme.css"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body class="">
+  <nav class="navbar navbar-default navbar-fixed-top--mobile">
+    <div class="container-fluid">
+      <div class="navbar-header hidden-sm hidden-xs">
+        <div class="logo-row">
+          <a class="navbar-brand" href="/" class="navbar-left">Brand desktop</a>
+        </div>
+        <li class="hidden-md hidden-lg link-without-border"><a href="/medlem/loggain" class="a-right"><span class="icon-user"></span><p id="menu">LOGGA IN</p></a></li>
+      </div>
+      <div id="desktop" class="hidden-sm hidden-xs">
+        <ul class="nav  navbar-nav" id="top-nav">
+          <li class="link-with-border" id="li-logo">
+            <div class="logo-row">
+              <a class="navbar-brand" href="/" class="navbar-left">
+                <img src='/images/logo-header3.png'>
+              </a>
+            </div>
+          </li>
+          <li class="link-with-border"><a href="#"><span class="icon-company"></span><p>FÖRETAG</p></a></li>
+          <li class="link-with-border {if $topmenu == 'offers' or $topmenu == 'offers_category_all' or $topmenu =='offers_category'}active{/if}"><a href="/erbjudanden"><span class="icon-tags-news"></span><p>ERBJUDANDE</p></a></li>
+          <li class="link-with-border {if in_array($function,array('articles'))}active{/if}"><a href="/artiklar"><span class="icon-news"></span><p>ARTIKLAR</p></a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right" id="top-nav-right">
+          <li class="link-without-border"><a href="#" class="a-right"><span class="icon-assistant"></span>KUNDTJÄNST</a></li>
+          <li class="link-without-border"><a href="/medlem/loggain" class="a-right"><span class="icon-user"></span>LOGGA IN</a></li>
+          <li class="link-without-border"><a href="/medlemskap/bli-medlem" class="a-right"><span></span>BLI MEDLEM</a></li>
+          <button class="search a-right"><span class="icon-search"></span></button>
+        </ul>
+      </div>
+
+
+
+      <div class="navbar-header hidden-md hidden-lg">
+        <button type="button" class="pull-left navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">Brand mobile</a>
+        <ul class="nav navbar-nav navbar__mobile--right pull-right">
+          <li><a href="#">Logga in</a></li>
+        </ul>
+      </div>
+      <div class="collapse hidden-md hidden-lg" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Välj kategori <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a><span class="icon-cool"></span>NÖJE</a></li>
+              <li><a><span class="icon-airport"></span>RESOR</a></li>
+              <li><a><span class="icon-health"></span>HÄLSA & SKÖNHET</a></li>
+              <li><a><span class="icon-cottage"></span>BOENDE</a></li>
+              <li><a><span class="icon-multiple-devices"></span>TEKNIK</a></li>
+              <li><a><span class="icon-reading"></span>LÄSNING</a></li>
+              <li><a><span class="icon-banknotes"></span>EKONOMI</a></li>
+              <li><a><span class="icon-food"></span>MAT & DRYCK</a></li>
+              <li><a><span class="icon-dress"></span>MODE</a></li>
+            </ul>
+          </li>
+          <li><a>Artiklar</a></li>
+          <li><a>Företag</a></li>
+        </ul>
+      </div><!-- /.navbar-collapse -->
+    </div>
+  </nav>
+</body>
+</html>
